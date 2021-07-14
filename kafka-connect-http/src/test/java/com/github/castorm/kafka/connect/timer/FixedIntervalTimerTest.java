@@ -82,6 +82,6 @@ class FixedIntervalTimerTest {
         Offset offset = Offset.of(emptyMap(), "key", now());
         long intervalMillis = 300000L;
         long lastPollMillis = System.currentTimeMillis();
-        long maxExecutionTimeMillis = 500L;
+        long maxExecutionTimeMillis = 2000L;
     }
 }

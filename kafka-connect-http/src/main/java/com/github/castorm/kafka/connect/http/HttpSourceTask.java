@@ -142,11 +142,16 @@ public class HttpSourceTask extends SourceTask {
 
     @Override
     public void commit() {
-        offset = confirmationWindow.getLowWatermarkOffset()
+      try {
+          offset = confirmationWindow.getLowWatermarkOffset()
                 .map(Offset::of)
                 .orElse(offset);
 
-        log.debug("Offset set to {}", offset);
+          log.debug("Offset set to {}", offset);
+      } catch (Exception e) {
+          log.debug("Offset not set:  {}", e);
+      }
+
     }
 
     @Override

@@ -54,7 +54,7 @@ public class ConfirmationWindow<T> {
             if (offsetWasConfirmed) {
                 offset = sourceOffset;
             } else {
-                log.warn("Found unconfirmed offset {}. Will resume polling from previous offset. " +
+                log.info("Found unconfirmed offset {}. Will resume polling from previous offset. " +
                         "This might result in a number of duplicated records.", sourceOffset);
                 break;
             }
